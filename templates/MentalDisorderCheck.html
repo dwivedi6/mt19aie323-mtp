@@ -1,0 +1,220 @@
+<html>
+	<head>
+	<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<title>Mental Disorder Test</title>
+	</head>
+	<body>
+	<!-- Java Script -->	
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+		<marquee>"Mental illness Check Form" </marquee>
+		<!-- Navbar-->
+		<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1">Mental Disorder Check</span>
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "{{url_for('predict')}}" method ="POST" >
+				<fieldset>
+				<legend>Mental Disorder Test Form</legend><br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+					  	<div class="col-sm-3">
+							<label for="fhml">Family History of Mental Illness</label>
+							<select class="form-control" id="fhml"  name="fhml" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							  <option value = "2">Don't know</option>
+							</select>
+					   </div>
+					   
+					   <div class="col-sm">
+							<label for="cz">Company Size</label>
+							<select class="form-control" id="cz" name = "cz" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Don't know</option>
+							  <option value = "1">1-5</option>
+							  <option value = "2">6-25</option>
+							  <option value = "3">26-100</option>
+							  <option value = "4">101-500</option>
+							  <option value = "5">501-1000</option>
+							  <option value = "6">More than 1000</option>
+							</select>
+						  </div>
+					  
+						<div class="col-sm-3">
+							<label for="year">Year</label>
+							 <select class="form-control" id="year" name = "year" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "4">2014</option>
+							  <option value = "3">2016</option>
+							  <option value = "2">2017</option>
+							  <option value = "1">2018</option>
+							  <option value = "0">2019</option>
+							</select>
+						</div>
+						<div class="col-sm-3">
+							<label for="age"> Age</label>
+							<input type="number" class="form-control" id="age" name="age" required>
+						</div>
+						</div>
+						<br>
+
+						<div class="form-group  row">
+						
+						<div class="col-sm">
+							<label for="ag">Age-Group</label>
+							<select class="form-control" id="ag" name = "ag" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">0-20</option>
+							  <option value = "2">21-30</option>
+							  <option value = "1">31-40</option>
+							  <option value = "3">41-65</option>
+							  <option value = "4">66-100</option>
+							</select>
+						  </div>
+						
+						<div class="col-sm-3">
+							<label for="sex">Gender</label>
+							<select class="form-control" id="sex"  name="sex" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "2">Male</option>
+							  <option value = "1">Female</option>
+							  <option value = "0">Does not disclosed</option>
+							</select>
+					   </div>
+					   
+					   <div class="col-sm-3">
+							<label for="pa">Prefer Anonymity</label>
+							<select class="form-control" id="pa"  name="pa" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Don't know</option>
+							  <option value = "1">No</option>
+							  <option value = "2">Yes</option>
+							</select>
+					   </div>
+				   
+					   <div class="col-sm-3">
+							<label for="rrp">Rate Reaction to Problems</label>
+							<select class="form-control" id="rrp"  name="rrp" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Don't know</option>
+							  <option value = "1">Above Average</option>
+							  <option value = "2">Below Average</option>
+							</select>
+					   </div>
+				       </div>
+					   
+					   <div class="form-group  row">
+				   
+					   <div class="col-sm-3">
+							<label for="nc"> Negative Consequences</label>
+							<select class="form-control" id="nc"  name="nc" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							  <option value = "2">Maybe</option>
+							  <option value = "3">Self-Employed</option>
+							  <option value = "4">Don't know</option>
+							</select>
+					   </div> 
+					   
+					   	<div class="col-sm-3">
+							<label for="ati"> Access to information</label>
+							<select class="form-control" id="ati"  name="ati" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							</select>
+					   </div>
+		   
+					   	<div class="col-sm-3">
+							<label for="insurance">Insurance</label>
+							<select class="form-control" id="insurance"  name="insurance" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Don't know</option>
+							  <option value = "1">Yes</option>
+							  <option value = "2">No</option>
+							</select>
+					   </div>
+					   
+					   	<div class="col-sm-3">
+							<label for="diagnosis"> Diagnosis</label>
+							<select class="form-control" id="diagnosis"  name="diagnosis" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Don't know</option>
+							  <option value = "1">No</option>
+							  <option value = "2">Yes</option>
+							  <option value = "3">Sometimes</option>
+							</select>
+					   </div> 
+					   </div>
+					   </br>
+					   
+					   <div class="form-group  row">
+   				 	   <div class="col-sm-3">
+							<label for="dmhp"> Discuss Mental Health Problems</label>
+							<select class="form-control" id="dmhp"  name="dmhp" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Maybe</option>
+							  <option value = "1">Yes</option>
+							  <option value = "2">Don't know</option>
+							  <option value = "3">No</option>
+							</select>
+					   </div> 
+  				   	   <div class="col-sm-3">
+							<label for="remp">Responsible Employer</label>
+							<select class="form-control" id="remp"  name="remp" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "4">Yes</option>
+							  <option value = "3">No</option>
+							  <option value = "2">Maybe</option>
+							  <option value = "1">Self-Employed</option>
+							  <option value = "0">Don't know</option>
+							</select>
+					   </div>
+			   
+					   	<div class="col-sm-3">
+							<label for="disorder">Disorder</label>
+							<select class="form-control" id="disorder"  name="disorder" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">No</option>
+							  <option value = "1">Yes</option>
+							</select>
+					   </div>
+					   	<div class="col-sm-3">
+							<label for="ptemp">Primarily a Tech Employer</label>
+							<select class="form-control" id="ptemp"  name="ptemp" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "2">No</option>
+							  <option value = "0">Yes</option>
+							  <option value = "1">Don't Know</option>
+							</select>
+					   </div>
+  					   </div>
+					  <br>
+					  <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Result">
+					  </div>
+					<div>  
+					  <!--Prediction Result-->
+					  <div id ="result">
+							<strong style="color:red">{{result}}</strong>
+					 </div>
+				     </div>
+			 </fieldset>
+			</form>
+			
+		</div>
+		
+	</body>
+</html>
+
