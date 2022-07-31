@@ -4,7 +4,22 @@
 import numpy as np
 import pickle
 from flask import Flask, request, render_template
-
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import BaggingClassifier
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.svm import SVC
+from sklearn.pipeline import make_pipeline
+from sklearn import metrics
+from sklearn.compose import make_column_transformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+import numpy as np
+import pandas as pd  # data processing, CSV file I/O
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pickle
+from matplotlib.axes._axes import _log as matplotlib_axes_logger
 
 # Load ML model
 model = pickle.load(open('mentaldisorderpredictionmodel.pkl', 'rb')) 
